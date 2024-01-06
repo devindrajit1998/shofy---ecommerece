@@ -64,6 +64,9 @@ export default function BottomNav() {
                       <li>
                         <Link to="/">Home</Link>
                       </li>
+                      <li>
+                        <Link to="/shop">Shop</Link>
+                      </li>
                       <li className="has-dropdown has-mega-menu ">
                         <Link>Products</Link>
                         <ul className="tp-submenu tp-mega-menu mega-menu-style-2">

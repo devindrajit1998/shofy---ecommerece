@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SectionTitle from "./SectionTitle";
 import BannerCard from "./BannerCard";
+import Footer from "../common/Footer";
 
 export default function Home() {
   return (
@@ -51,7 +52,27 @@ export default function Home() {
                 <div className="tp-product-arrival-slider fix">
                   <div className="tp-product-arrival-active swiper-container">
                     <div className="swiper-wrapper">
-                      <Swiper spaceBetween={50} slidesPerView={4} loop={true}>
+                      <Swiper
+                        spaceBetween={50}
+                        loop={true}
+                        breakpoints={{
+                          1200: {
+                            slidesPerView: 4,
+                          },
+                          992: {
+                            slidesPerView: 3,
+                          },
+                          768: {
+                            slidesPerView: 2,
+                          },
+                          767: {
+                            slidesPerView: 2,
+                          },
+                          576: {
+                            slidesPerView: 1,
+                          },
+                        }}
+                      >
                         <SwiperSlide>
                           <ProductCard />
                         </SwiperSlide>
@@ -85,7 +106,6 @@ export default function Home() {
                     <div className="swiper-wrapper">
                       <Swiper
                         spaceBetween={50}
-                        // slidesPerView={4}
                         loop={true}
                         breakpoints={{
                           1200: {
@@ -155,6 +175,7 @@ export default function Home() {
           </div>
         </div>
       </main>
+      <Footer/>
     </>
   );
 }

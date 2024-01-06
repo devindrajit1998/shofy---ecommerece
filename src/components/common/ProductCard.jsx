@@ -3,7 +3,7 @@ import React from "react";
 export default function ProductCard() {
   return (
     <>
-      {/* <div className="col-xl-3 col-lg-3 col-sm-6"> */}
+
         <div className="tp-product-item p-relative transition-3 mb-25">
           <div className="tp-product-thumb p-relative fix m-img">
             <a href="product-details.html">
@@ -163,7 +163,7 @@ export default function ProductCard() {
             </div>
           </div>
         </div>
-      {/* </div> */}
+      
     </>
   );
 }
