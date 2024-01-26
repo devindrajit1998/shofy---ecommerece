@@ -11,146 +11,658 @@ export default function Shop() {
       <Layout />
       <Breadcum name="Shop Page" />
 
-      <section className="tp-shop-area pb-50">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <div className="tp-shop-main-wrapper">
-                <div className="tp-shop-top mb-45">
-                  <div className="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6"></div>
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                      <div className="tp-shop-top-right tp-shop-top-right-2 d-sm-flex align-items-center justify-content-xl-end">
-                        <div className="tp-shop-top-filter">
-                          <button
-                            type="button"
-                            className="tp-filter-btn filter-open-btn"
-                          >
-                            <span>
-                              <svg
-                                width={16}
-                                height={15}
-                                viewBox="0 0 16 15"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <path
-                                  d="M14.9998 3.45001H10.7998"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M3.8 3.45001H1"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M6.5999 5.9C7.953 5.9 9.0499 4.8031 9.0499 3.45C9.0499 2.0969 7.953 1 6.5999 1C5.2468 1 4.1499 2.0969 4.1499 3.45C4.1499 4.8031 5.2468 5.9 6.5999 5.9Z"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M15.0002 11.15H12.2002"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M5.2 11.15H1"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M9.4002 13.6C10.7533 13.6 11.8502 12.5031 11.8502 11.15C11.8502 9.79691 10.7533 8.70001 9.4002 8.70001C8.0471 8.70001 6.9502 9.79691 6.9502 11.15C6.9502 12.5031 8.0471 13.6 9.4002 13.6Z"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </svg>
+      <section class="tp-shop-area pb-120">
+        <div class="container container-shop">
+          <div class="row">
+            <div class="col-xl-2 col-lg-3">
+              <div className="tp-shop-sidebar mr-10">
+                
+                <div className="tp-shop-widget mb-50">
+                  <h3 className="tp-shop-widget-title">Product Status</h3>
+                  <div className="tp-shop-widget-content">
+                    <div className="tp-shop-widget-checkbox">
+                      <ul className="filter-items filter-checkbox">
+                        <li className="filter-item checkbox">
+                          <input id="on_sale" type="checkbox" />
+                          <label htmlFor="on_sale">On sale</label>
+                        </li>
+                        <li className="filter-item checkbox">
+                          <input id="in_stock" type="checkbox" />
+                          <label htmlFor="in_stock">In Stock</label>
+                        </li>
+                      </ul>
+                      {/* .filter-items */}
+                    </div>
+                  </div>
+                </div>
+                {/* categories */}
+                <div className="tp-shop-widget mb-50">
+                  <h3 className="tp-shop-widget-title">Categories</h3>
+                  <div className="tp-shop-widget-content">
+                    <div className="tp-shop-widget-categories">
+                      <ul>
+                        <li>
+                          <a href="#">
+                            Leather <span>10</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Classic Watch <span>18</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Leather Man Wacth <span>22</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Trending Watch <span>17</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Google <span>22</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Woman Wacth <span>14</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Tables <span>19</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Electronics <span>29</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Phones <span>05</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#">
+                            Grocery <span>14</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                {/* color */}
+                <div className="tp-shop-widget mb-50">
+                  <h3 className="tp-shop-widget-title">Filter by Color</h3>
+                  <div className="tp-shop-widget-content">
+                    <div className="tp-shop-widget-checkbox-circle-list">
+                      <ul>
+                        <li>
+                          <div className="tp-shop-widget-checkbox-circle">
+                            <input type="checkbox" id="red" />
+                            <label htmlFor="red">Red</label>
+                            <span
+                              data-bg-color="#FF401F"
+                              className="tp-shop-widget-checkbox-circle-self"
+                            />
+                          </div>
+                          <span className="tp-shop-widget-checkbox-circle-number">
+                            8
+                          </span>
+                        </li>
+                        <li>
+                          <div className="tp-shop-widget-checkbox-circle">
+                            <input type="checkbox" id="dark_blue" />
+                            <label htmlFor="dark_blue">Dark Blue</label>
+                            <span
+                              data-bg-color="#4666FF"
+                              className="tp-shop-widget-checkbox-circle-self"
+                            />
+                          </div>
+                          <span className="tp-shop-widget-checkbox-circle-number">
+                            14
+                          </span>
+                        </li>
+                        <li>
+                          <div className="tp-shop-widget-checkbox-circle">
+                            <input type="checkbox" id="oragnge" />
+                            <label htmlFor="oragnge">Orange</label>
+                            <span
+                              data-bg-color="#FF9E2C"
+                              className="tp-shop-widget-checkbox-circle-self"
+                            />
+                          </div>
+                          <span className="tp-shop-widget-checkbox-circle-number">
+                            18
+                          </span>
+                        </li>
+                        <li>
+                          <div className="tp-shop-widget-checkbox-circle">
+                            <input type="checkbox" id="purple" />
+                            <label htmlFor="purple">Purple</label>
+                            <span
+                              data-bg-color="#B615FD"
+                              className="tp-shop-widget-checkbox-circle-self"
+                            />
+                          </div>
+                          <span className="tp-shop-widget-checkbox-circle-number">
+                            23
+                          </span>
+                        </li>
+                        <li>
+                          <div className="tp-shop-widget-checkbox-circle">
+                            <input type="checkbox" id="yellow" />
+                            <label htmlFor="yellow">Yellow</label>
+                            <span
+                              data-bg-color="#FFD747"
+                              className="tp-shop-widget-checkbox-circle-self"
+                            />
+                          </div>
+                          <span className="tp-shop-widget-checkbox-circle-number">
+                            17
+                          </span>
+                        </li>
+                        <li>
+                          <div className="tp-shop-widget-checkbox-circle">
+                            <input type="checkbox" id="green" />
+                            <label htmlFor="green">Green</label>
+                            <span
+                              data-bg-color="#41CF0F"
+                              className="tp-shop-widget-checkbox-circle-self"
+                            />
+                          </div>
+                          <span className="tp-shop-widget-checkbox-circle-number">
+                            15
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                {/* product rating */}
+                <div className="tp-shop-widget mb-50">
+                  <h3 className="tp-shop-widget-title">Top Rated Products</h3>
+                  <div className="tp-shop-widget-content">
+                    <div className="tp-shop-widget-product">
+                      <div className="tp-shop-widget-product-item d-flex align-items-center">
+                        <div className="tp-shop-widget-product-thumb">
+                          <a href="product-details.html">
+                            <img
+                              src="assets/img/product/shop/sm/shop-sm-1.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div className="tp-shop-widget-product-content">
+                          <div className="tp-shop-widget-product-rating-wrapper d-flex align-items-center">
+                            <div className="tp-shop-widget-product-rating">
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div className="tp-shop-widget-product-rating-number">
+                              <span>(4.2)</span>
+                            </div>
+                          </div>
+                          <h4 className="tp-shop-widget-product-title">
+                            <a href="product-details.html">
+                              Smart watches wood...
+                            </a>
+                          </h4>
+                          <div className="tp-shop-widget-product-price-wrapper">
+                            <span className="tp-shop-widget-product-price">
+                              $150.00
                             </span>
-                            Filter
-                          </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="tp-shop-widget-product-item d-flex align-items-center">
+                        <div className="tp-shop-widget-product-thumb">
+                          <a href="product-details.html">
+                            <img
+                              src="assets/img/product/shop/sm/shop-sm-2.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div className="tp-shop-widget-product-content">
+                          <div className="tp-shop-widget-product-rating-wrapper d-flex align-items-center">
+                            <div className="tp-shop-widget-product-rating">
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div className="tp-shop-widget-product-rating-number">
+                              <span>(4.5)</span>
+                            </div>
+                          </div>
+                          <h4 className="tp-shop-widget-product-title">
+                            <a href="product-details.html">
+                              Decoration for panda.
+                            </a>
+                          </h4>
+                          <div className="tp-shop-widget-product-price-wrapper">
+                            <span className="tp-shop-widget-product-price">
+                              $120.00
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="tp-shop-widget-product-item d-flex align-items-center">
+                        <div className="tp-shop-widget-product-thumb">
+                          <a href="product-details.html">
+                            <img
+                              src="assets/img/product/shop/sm/shop-sm-3.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div className="tp-shop-widget-product-content">
+                          <div className="tp-shop-widget-product-rating-wrapper d-flex align-items-center">
+                            <div className="tp-shop-widget-product-rating">
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div className="tp-shop-widget-product-rating-number">
+                              <span>(3.5)</span>
+                            </div>
+                          </div>
+                          <h4 className="tp-shop-widget-product-title">
+                            <a href="product-details.html">
+                              Trending Watch for Man
+                            </a>
+                          </h4>
+                          <div className="tp-shop-widget-product-price-wrapper">
+                            <span className="tp-shop-widget-product-price">
+                              $99.00
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="tp-shop-widget-product-item d-flex align-items-center">
+                        <div className="tp-shop-widget-product-thumb">
+                          <a href="product-details.html">
+                            <img
+                              src="assets/img/product/shop/sm/shop-sm-4.jpg"
+                              alt=""
+                            />
+                          </a>
+                        </div>
+                        <div className="tp-shop-widget-product-content">
+                          <div className="tp-shop-widget-product-rating-wrapper d-flex align-items-center">
+                            <div className="tp-shop-widget-product-rating">
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span>
+                                <svg
+                                  width={12}
+                                  height={12}
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M6 0L7.854 3.756L12 4.362L9 7.284L9.708 11.412L6 9.462L2.292 11.412L3 7.284L0 4.362L4.146 3.756L6 0Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
+                            <div className="tp-shop-widget-product-rating-number">
+                              <span>(4.8)</span>
+                            </div>
+                          </div>
+                          <h4 className="tp-shop-widget-product-title">
+                            <a href="product-details.html">Minimal Backpack.</a>
+                          </h4>
+                          <div className="tp-shop-widget-product-price-wrapper">
+                            <span className="tp-shop-widget-product-price">
+                              $165.00
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="tp-shop-items-wrapper tp-shop-item-primary">
-                  <div className="tab-content" id="productTabContent">
-                    <div
-                      className="tab-pane fade show active"
-                      id="grid-tab-pane"
-                      role="tabpanel"
-                      aria-labelledby="grid-tab"
-                      tabIndex={0}>
-                      <div className="row">
-                        <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                          <div className="tp-product-item-2 mb-40">
-                            <ProductCard/>
-                          </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                          <div className="tp-product-item-2 mb-40">
-                            <ProductCard/>
-                          </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                          <div className="tp-product-item-2 mb-40">
-                            <ProductCard/>
-                          </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                          <div className="tp-product-item-2 mb-40">
-                            <ProductCard/>
-                          </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                          <div className="tp-product-item-2 mb-40">
-                            <ProductCard/>
-                          </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                          <div className="tp-product-item-2 mb-40">
-                            <ProductCard/>
-                          </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                          <div className="tp-product-item-2 mb-40">
-                            <ProductCard/>
-                          </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                          <div className="tp-product-item-2 mb-40">
-                            <ProductCard/>
-                          </div>
-                        </div>
+                {/* brand */}
+                <div className="tp-shop-widget mb-50">
+                  <h3 className="tp-shop-widget-title">Popular Brands</h3>
+                  <div className="tp-shop-widget-content ">
+                    <div className="tp-shop-widget-brand-list d-flex align-items-center justify-content-between flex-wrap">
+                      <div className="tp-shop-widget-brand-item">
+                        <a href="#">
+                          <img
+                            src="assets/img/product/shop/brand/logo_01.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div className="tp-shop-widget-brand-item">
+                        <a href="#">
+                          <img
+                            src="assets/img/product/shop/brand/logo_02.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div className="tp-shop-widget-brand-item">
+                        <a href="#">
+                          <img
+                            src="assets/img/product/shop/brand/logo_03.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div className="tp-shop-widget-brand-item">
+                        <a href="#">
+                          <img
+                            src="assets/img/product/shop/brand/logo_04.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div className="tp-shop-widget-brand-item">
+                        <a href="#">
+                          <img
+                            src="assets/img/product/shop/brand/logo_05.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div className="tp-shop-widget-brand-item">
+                        <a href="#">
+                          <img
+                            src="assets/img/product/shop/brand/logo_06.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div className="tp-shop-widget-brand-item">
+                        <a href="#">
+                          <img
+                            src="assets/img/product/shop/brand/logo_07.png"
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div className="tp-shop-widget-brand-item">
+                        <a href="#">
+                          <img
+                            src="assets/img/product/shop/brand/logo_08.png"
+                            alt=""
+                          />
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <Pagination/>
             </div>
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,537 @@
+{
+    "data": [
+      {
+        "id": 1,
+        "attributes": {
+          "name": "phone",
+          "createdAt": "2024-01-13T13:16:09.946Z",
+          "updatedAt": "2024-01-13T16:17:16.049Z",
+          "publishedAt": "2024-01-13T13:20:19.577Z",
+          "img": {
+            "data": {
+              "id": 18,
+              "attributes": {
+                "name": "PngItem_5259250.png",
+                "alternativeText": null,
+                "caption": null,
+                "width": 455,
+                "height": 884,
+                "formats": {
+                  "thumbnail": {
+                    "name": "thumbnail_PngItem_5259250.png",
+                    "hash": "thumbnail_Png_Item_5259250_487eb4b1f9",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 80,
+                    "height": 156,
+                    "size": 27.59,
+                    "url": "/uploads/thumbnail_Png_Item_5259250_487eb4b1f9.png"
+                  },
+                  "small": {
+                    "name": "small_PngItem_5259250.png",
+                    "hash": "small_Png_Item_5259250_487eb4b1f9",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 257,
+                    "height": 500,
+                    "size": 171.82,
+                    "url": "/uploads/small_Png_Item_5259250_487eb4b1f9.png"
+                  },
+                  "medium": {
+                    "name": "medium_PngItem_5259250.png",
+                    "hash": "medium_Png_Item_5259250_487eb4b1f9",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 386,
+                    "height": 750,
+                    "size": 334.78,
+                    "url": "/uploads/medium_Png_Item_5259250_487eb4b1f9.png"
+                  }
+                },
+                "hash": "Png_Item_5259250_487eb4b1f9",
+                "ext": ".png",
+                "mime": "image/png",
+                "size": 79.07,
+                "url": "/uploads/Png_Item_5259250_487eb4b1f9.png",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-01-13T16:17:12.340Z",
+                "updatedAt": "2024-01-13T16:17:12.340Z"
+              }
+            }
+          },
+          "subcategories": {
+            "data": [
+              {
+                "id": 1,
+                "attributes": {
+                  "name": "android",
+                  "createdAt": "2024-01-13T13:16:24.660Z",
+                  "updatedAt": "2024-01-13T13:16:24.660Z",
+                  "publishedAt": "2024-01-13T13:20:12.264Z"
+                }
+              },
+              {
+                "id": 2,
+                "attributes": {
+                  "name": "ios",
+                  "createdAt": "2024-01-13T13:18:37.443Z",
+                  "updatedAt": "2024-01-13T13:18:37.443Z",
+                  "publishedAt": "2024-01-13T13:20:12.264Z"
+                }
+              },
+              {
+                "id": 3,
+                "attributes": {
+                  "name": "feature",
+                  "createdAt": "2024-01-13T13:18:59.067Z",
+                  "updatedAt": "2024-01-13T13:18:59.067Z",
+                  "publishedAt": "2024-01-13T13:20:12.264Z"
+                }
+              }
+            ]
+          },
+          "products": {
+            "data": [
+              {
+                "id": 2,
+                "attributes": {
+                  "name": "Iphone 15 Pro Plus",
+                  "description": "Iphone 15 Pro Plus brand new",
+                  "sale": false,
+                  "feature": true,
+                  "trending": true,
+                  "mainPrice": 140000,
+                  "offerPrice": 119999,
+                  "createdAt": "2024-01-13T14:14:54.270Z",
+                  "updatedAt": "2024-01-13T18:50:18.038Z",
+                  "publishedAt": "2024-01-13T14:16:06.209Z",
+                  "brand": "Apple",
+                  "specifications": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "id": 1,
+                "attributes": {
+                  "name": "Iphone 15 Pro",
+                  "description": "Iphone 15 Pro brand new",
+                  "sale": false,
+                  "feature": true,
+                  "trending": true,
+                  "mainPrice": 120000,
+                  "offerPrice": 99999,
+                  "createdAt": "2024-01-13T14:12:30.044Z",
+                  "updatedAt": "2024-01-13T18:50:41.281Z",
+                  "publishedAt": "2024-01-13T14:12:34.747Z",
+                  "brand": "Apple",
+                  "specifications": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "type": "text",
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": 2,
+        "attributes": {
+          "name": "computer",
+          "createdAt": "2024-01-13T13:17:38.402Z",
+          "updatedAt": "2024-01-13T16:24:10.114Z",
+          "publishedAt": "2024-01-13T13:20:19.577Z",
+          "img": {
+            "data": {
+              "id": 19,
+              "attributes": {
+                "name": "PngItem_454422.png",
+                "alternativeText": null,
+                "caption": null,
+                "width": 2001,
+                "height": 1660,
+                "formats": {
+                  "thumbnail": {
+                    "name": "thumbnail_PngItem_454422.png",
+                    "hash": "thumbnail_Png_Item_454422_d2a7c63856",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 188,
+                    "height": 156,
+                    "size": 41.14,
+                    "url": "/uploads/thumbnail_Png_Item_454422_d2a7c63856.png"
+                  },
+                  "small": {
+                    "name": "small_PngItem_454422.png",
+                    "hash": "small_Png_Item_454422_d2a7c63856",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 500,
+                    "height": 415,
+                    "size": 231.77,
+                    "url": "/uploads/small_Png_Item_454422_d2a7c63856.png"
+                  },
+                  "medium": {
+                    "name": "medium_PngItem_454422.png",
+                    "hash": "medium_Png_Item_454422_d2a7c63856",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 750,
+                    "height": 622,
+                    "size": 478,
+                    "url": "/uploads/medium_Png_Item_454422_d2a7c63856.png"
+                  },
+                  "large": {
+                    "name": "large_PngItem_454422.png",
+                    "hash": "large_Png_Item_454422_d2a7c63856",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 1000,
+                    "height": 830,
+                    "size": 803.62,
+                    "url": "/uploads/large_Png_Item_454422_d2a7c63856.png"
+                  }
+                },
+                "hash": "Png_Item_454422_d2a7c63856",
+                "ext": ".png",
+                "mime": "image/png",
+                "size": 553.03,
+                "url": "/uploads/Png_Item_454422_d2a7c63856.png",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-01-13T16:24:05.454Z",
+                "updatedAt": "2024-01-13T16:24:05.454Z"
+              }
+            }
+          },
+          "subcategories": {
+            "data": [
+              {
+                "id": 6,
+                "attributes": {
+                  "name": "laptop",
+                  "createdAt": "2024-01-13T13:19:50.839Z",
+                  "updatedAt": "2024-01-13T13:19:50.839Z",
+                  "publishedAt": "2024-01-13T13:20:12.264Z"
+                }
+              },
+              {
+                "id": 7,
+                "attributes": {
+                  "name": "desktop",
+                  "createdAt": "2024-01-13T13:19:59.923Z",
+                  "updatedAt": "2024-01-13T13:20:04.577Z",
+                  "publishedAt": "2024-01-13T13:20:12.264Z"
+                }
+              }
+            ]
+          },
+          "products": {
+            "data": []
+          }
+        }
+      },
+      {
+        "id": 3,
+        "attributes": {
+          "name": "accessories",
+          "createdAt": "2024-01-13T13:18:20.863Z",
+          "updatedAt": "2024-01-13T16:28:30.673Z",
+          "publishedAt": "2024-01-13T13:20:19.577Z",
+          "img": {
+            "data": {
+              "id": 20,
+              "attributes": {
+                "name": "PngItem_3673015.png",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1631,
+                "height": 1630,
+                "formats": {
+                  "thumbnail": {
+                    "name": "thumbnail_PngItem_3673015.png",
+                    "hash": "thumbnail_Png_Item_3673015_f170c425fe",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 156,
+                    "height": 156,
+                    "size": 20.88,
+                    "url": "/uploads/thumbnail_Png_Item_3673015_f170c425fe.png"
+                  },
+                  "small": {
+                    "name": "small_PngItem_3673015.png",
+                    "hash": "small_Png_Item_3673015_f170c425fe",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 500,
+                    "height": 500,
+                    "size": 159.4,
+                    "url": "/uploads/small_Png_Item_3673015_f170c425fe.png"
+                  },
+                  "large": {
+                    "name": "large_PngItem_3673015.png",
+                    "hash": "large_Png_Item_3673015_f170c425fe",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 1000,
+                    "height": 999,
+                    "size": 602.72,
+                    "url": "/uploads/large_Png_Item_3673015_f170c425fe.png"
+                  },
+                  "medium": {
+                    "name": "medium_PngItem_3673015.png",
+                    "hash": "medium_Png_Item_3673015_f170c425fe",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 750,
+                    "height": 750,
+                    "size": 345.99,
+                    "url": "/uploads/medium_Png_Item_3673015_f170c425fe.png"
+                  }
+                },
+                "hash": "Png_Item_3673015_f170c425fe",
+                "ext": ".png",
+                "mime": "image/png",
+                "size": 557.91,
+                "url": "/uploads/Png_Item_3673015_f170c425fe.png",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-01-13T16:28:27.157Z",
+                "updatedAt": "2024-01-13T16:28:27.157Z"
+              }
+            }
+          },
+          "subcategories": {
+            "data": [
+              {
+                "id": 4,
+                "attributes": {
+                  "name": "headphones",
+                  "createdAt": "2024-01-13T13:19:14.921Z",
+                  "updatedAt": "2024-01-13T13:19:14.921Z",
+                  "publishedAt": "2024-01-13T13:20:12.264Z"
+                }
+              },
+              {
+                "id": 5,
+                "attributes": {
+                  "name": "smart watch",
+                  "createdAt": "2024-01-13T13:19:33.994Z",
+                  "updatedAt": "2024-01-13T13:19:33.994Z",
+                  "publishedAt": "2024-01-13T13:20:12.264Z"
+                }
+              }
+            ]
+          },
+          "products": {
+            "data": []
+          }
+        }
+      },
+      {
+        "id": 4,
+        "attributes": {
+          "name": "men",
+          "createdAt": "2024-01-13T16:33:55.865Z",
+          "updatedAt": "2024-01-13T16:37:49.745Z",
+          "publishedAt": "2024-01-13T16:34:06.378Z",
+          "img": {
+            "data": {
+              "id": 23,
+              "attributes": {
+                "name": "PngItem_40760.png",
+                "alternativeText": null,
+                "caption": null,
+                "width": 846,
+                "height": 1160,
+                "formats": {
+                  "thumbnail": {
+                    "name": "thumbnail_PngItem_40760.png",
+                    "hash": "thumbnail_Png_Item_40760_73da2c60f4",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 114,
+                    "height": 156,
+                    "size": 38.32,
+                    "url": "/uploads/thumbnail_Png_Item_40760_73da2c60f4.png"
+                  },
+                  "small": {
+                    "name": "small_PngItem_40760.png",
+                    "hash": "small_Png_Item_40760_73da2c60f4",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 365,
+                    "height": 500,
+                    "size": 298.91,
+                    "url": "/uploads/small_Png_Item_40760_73da2c60f4.png"
+                  },
+                  "medium": {
+                    "name": "medium_PngItem_40760.png",
+                    "hash": "medium_Png_Item_40760_73da2c60f4",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 547,
+                    "height": 750,
+                    "size": 625.38,
+                    "url": "/uploads/medium_Png_Item_40760_73da2c60f4.png"
+                  },
+                  "large": {
+                    "name": "large_PngItem_40760.png",
+                    "hash": "large_Png_Item_40760_73da2c60f4",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 729,
+                    "height": 1000,
+                    "size": 1045,
+                    "url": "/uploads/large_Png_Item_40760_73da2c60f4.png"
+                  }
+                },
+                "hash": "Png_Item_40760_73da2c60f4",
+                "ext": ".png",
+                "mime": "image/png",
+                "size": 285.97,
+                "url": "/uploads/Png_Item_40760_73da2c60f4.png",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-01-13T16:37:46.348Z",
+                "updatedAt": "2024-01-13T16:37:46.348Z"
+              }
+            }
+          },
+          "subcategories": {
+            "data": []
+          },
+          "products": {
+            "data": []
+          }
+        }
+      },
+      {
+        "id": 5,
+        "attributes": {
+          "name": "women",
+          "createdAt": "2024-01-13T16:39:21.196Z",
+          "updatedAt": "2024-01-13T16:41:52.076Z",
+          "publishedAt": "2024-01-13T16:39:24.476Z",
+          "img": {
+            "data": {
+              "id": 25,
+              "attributes": {
+                "name": "PngItem_1774915.png",
+                "alternativeText": null,
+                "caption": null,
+                "width": 1045,
+                "height": 1048,
+                "formats": {
+                  "thumbnail": {
+                    "name": "thumbnail_PngItem_1774915.png",
+                    "hash": "thumbnail_Png_Item_1774915_d61f71a1b4",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 156,
+                    "height": 156,
+                    "size": 31.25,
+                    "url": "/uploads/thumbnail_Png_Item_1774915_d61f71a1b4.png"
+                  },
+                  "small": {
+                    "name": "small_PngItem_1774915.png",
+                    "hash": "small_Png_Item_1774915_d61f71a1b4",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 499,
+                    "height": 500,
+                    "size": 252.15,
+                    "url": "/uploads/small_Png_Item_1774915_d61f71a1b4.png"
+                  },
+                  "medium": {
+                    "name": "medium_PngItem_1774915.png",
+                    "hash": "medium_Png_Item_1774915_d61f71a1b4",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 748,
+                    "height": 750,
+                    "size": 543.49,
+                    "url": "/uploads/medium_Png_Item_1774915_d61f71a1b4.png"
+                  },
+                  "large": {
+                    "name": "large_PngItem_1774915.png",
+                    "hash": "large_Png_Item_1774915_d61f71a1b4",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 997,
+                    "height": 1000,
+                    "size": 920.83,
+                    "url": "/uploads/large_Png_Item_1774915_d61f71a1b4.png"
+                  }
+                },
+                "hash": "Png_Item_1774915_d61f71a1b4",
+                "ext": ".png",
+                "mime": "image/png",
+                "size": 182.48,
+                "url": "/uploads/Png_Item_1774915_d61f71a1b4.png",
+                "previewUrl": null,
+                "provider": "local",
+                "provider_metadata": null,
+                "createdAt": "2024-01-13T16:41:48.349Z",
+                "updatedAt": "2024-01-13T16:41:48.349Z"
+              }
+            }
+          },
+          "subcategories": {
+            "data": []
+          },
+          "products": {
+            "data": []
+          }
+        }
+      }
+    ],
+    "meta": {
+      "pagination": {
+        "page": 1,
+        "pageSize": 25,
+        "pageCount": 1,
+        "total": 5
+      }
+    }
+  }

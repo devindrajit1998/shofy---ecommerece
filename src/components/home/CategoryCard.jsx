@@ -1,23 +1,29 @@
 import React from "react";
+import { useProductProvider } from "../context/ProductContex";
+import { Link } from "react-router-dom";
 
-export default function CategoryCard() {
+export default function CategoryCard(items) {
+
+const {BASE_URL} = useProductProvider()
+const common = items.items.attributes;
   return (
     <>
      <div className="col">
       <div className="tp-product-category-item text-center mb-40">
         <div className="tp-product-category-thumb fix">
-          <a href="shop-category.html">
+          <Link >
             <img
-              src="img/product/category/product-cat-1.png"
+              src={`${BASE_URL}${common.img.data.attributes.url}`}
               alt="product-category"
+              height={100}
             />
-          </a>
+          </Link>
         </div>
         <div className="tp-product-category-content">
           <h3 className="tp-product-category-title">
-            <a href="shop-category.html">Headphones</a>
+            <Link>{common.name}</Link>
           </h3>
-          <p>20 Product</p>
+          <p>{common.products.data.length} Products</p>
         </div>
       </div>
       </div>

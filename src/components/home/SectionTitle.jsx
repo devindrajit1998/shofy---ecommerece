@@ -63,6 +63,7 @@ export default function SectionTitle(props) {
                   />
                 </svg>
               </button>
+             
             </div>
           </div>
         </div>

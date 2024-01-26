@@ -14273,9 +14273,10 @@ div.tp-author-info-avater img {
 }
 .tp-product-category-title {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--tp-common-black);
   margin-bottom: 0;
+  text-transform: uppercase;
 }
 .tp-product-category-title a:hover {
   color: var(--tp-theme-primary);
@@ -15510,9 +15511,15 @@ div.tp-author-info-avater img {
   border-bottom: 1px solid var(--tp-border-primary);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  height: 215px;
+  overflow: hidden;
+  padding: 15px;
+  background-color: #F4F5F7;
 }
 .tp-product-thumb img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .tp-product-content {
   padding: 10px 30px 20px;

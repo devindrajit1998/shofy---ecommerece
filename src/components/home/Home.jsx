@@ -8,12 +8,16 @@ import ProductCard from "../common/ProductCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
+import "swiper/swiper-bundle.css";
 import SectionTitle from "./SectionTitle";
 import BannerCard from "./BannerCard";
 import Footer from "../common/Footer";
+import { useProductProvider } from "../context/ProductContex";
+import ProductModal from "../common/ProductModal";
 
-export default function Home() {
+export default function Home(id) {
+  const { category, product, trending , sale} = useProductProvider();
+
   return (
     <>
       <Layout />
@@ -21,7 +25,7 @@ export default function Home() {
         {/* slider area start  */}
         <section className="tp-slider-area p-relative z-index-1">
           <div className="tp-slider-active tp-slider-variation swiper-container">
-            <div className="swiper-wrapper">
+            <div className="swiper-wrapper green-dark-bg">
               <HeroSlider />
             </div>
           </div>
@@ -31,16 +35,47 @@ export default function Home() {
         {/* product category area area start  */}
         <section className="tp-product-category pt-60 pb-15">
           <div className="container">
-            <div className="row row-cols-xl-5 row-cols-lg-5 row-cols-md-4">
-              <CategoryCard />
-              <CategoryCard />
-              <CategoryCard />
-              <CategoryCard />
-              <CategoryCard />
+            <div className="row">
+              <Swiper
+                spaceBetween={20}
+                loop={true}
+                autoplay={{
+                  delay: 1000,
+                  disableOnInteraction: false,
+                }}
+                breakpoints={{
+                  1200: {
+                    slidesPerView: 5,
+                  },
+                  992: {
+                    slidesPerView: 4,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                  },
+                  767: {
+                    slidesPerView: 2,
+                  },
+                  576: {
+                    slidesPerView: 1,
+                  },
+                }}
+              >
+                {category
+                  ? category.map((items, index) => {
+                      return (
+                        <SwiperSlide key={index}>
+                          <CategoryCard items={items} />
+                        </SwiperSlide>
+                      );
+                    })
+                  : category}
+              </Swiper>
             </div>
           </div>
         </section>
         {/* product category area area end  */}
+
         {/* feature area start */}
         <Service />
         {/* feature area end */}
@@ -55,15 +90,19 @@ export default function Home() {
                       <Swiper
                         spaceBetween={50}
                         loop={true}
+                        navigation={{
+                          nextEl: ".tp-arrival-slider-button-next",
+                          prevEl: ".tp-arrival-slider-button-prev",
+                        }}
                         breakpoints={{
                           1200: {
-                            slidesPerView: 4,
+                            slidesPerView: 5,
                           },
                           992: {
-                            slidesPerView: 3,
+                            slidesPerView: 4,
                           },
                           768: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                           },
                           767: {
                             slidesPerView: 2,
@@ -73,21 +112,17 @@ export default function Home() {
                           },
                         }}
                       >
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
+                        {trending
+                          ? trending.map((items) => {
+                            const data = items.attributes;
+                            // console.log("new data",data)
+                              return (
+                                <SwiperSlide key={items.id}>
+                                  <ProductCard data={data} state="Trending" id={id}/>
+                                </SwiperSlide>
+                              );
+                            })
+                          : trending} 
                       </Swiper>
                     </div>
                   </div>
@@ -109,13 +144,13 @@ export default function Home() {
                         loop={true}
                         breakpoints={{
                           1200: {
-                            slidesPerView: 4,
+                            slidesPerView: 5,
                           },
                           992: {
-                            slidesPerView: 3,
+                            slidesPerView: 4,
                           },
                           768: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                           },
                           767: {
                             slidesPerView: 2,
@@ -125,21 +160,17 @@ export default function Home() {
                           },
                         }}
                       >
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                          <ProductCard />
-                        </SwiperSlide>
+                         {sale
+                          ? sale.map((items) => {
+                            const data = items.attributes;
+                            // console.log("new data",data)
+                              return (
+                                <SwiperSlide key={items.id}>
+                                  <ProductCard data={data} state="Sale" />
+                                </SwiperSlide>
+                              );
+                            })
+                          : sale}
                       </Swiper>
                     </div>
                   </div>
@@ -174,8 +205,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <ProductModal />
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }
