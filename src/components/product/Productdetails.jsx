@@ -34,7 +34,7 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
         <div className="tp-product-details-top pb-115">
           <div className="container">
             <div className="row">
-              <div className="col-xl-7 col-lg-6">{/* <ProductThumb /> */}</div>{" "}
+              <div className="col-xl-7 col-lg-6"><ProductThumb /> </div>
               {/* col end */}
               <div className="col-xl-5 col-lg-6">
                 <div className="tp-product-details-wrapper">
