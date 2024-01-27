@@ -9,7 +9,7 @@ import CommonBtn from "./CommonBtn";
 export default function ProductModal() {
   const { modalProduct } = useProductProvider();
   const common = modalProduct ? modalProduct.attributes : {};
-  const { name, description, mainPrice, offerPrice } = common || {};
+  const { name, description, mainPrice, offerPrice, category, stock } = common || {};
 
   return (
     <>
@@ -38,13 +38,13 @@ export default function ProductModal() {
                 <div className="col-sm-7">
                   <div className="tp-product-details-wrapper">
                     <div className="tp-product-details-category">
-                      <span>Computers &amp; Tablets</span>
+                      <span>{category?.data.attributes.name}</span>
                     </div>
                     <h3 className="tp-product-details-title">{name}</h3>
                     {/* inventory details */}
                     <div className="tp-product-details-inventory d-flex align-items-center mb-10">
                       <div className="tp-product-details-stock mb-10">
-                        <span>In Stock</span>
+                        <span>{stock}</span>
                       </div>
                       <div className="tp-product-details-rating-wrapper d-flex align-items-center mb-10">
                         <Rating />
@@ -53,7 +53,7 @@ export default function ProductModal() {
                         </div>
                       </div>
                     </div>
-                    <p>{description}</p>
+                    <p className="limited_lines-4">{description}</p>
                     {/* price */}
                     <div className="tp-product-details-price-wrapper mb-20">
                       <span className="tp-product-details-price old-price">

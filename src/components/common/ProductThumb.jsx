@@ -13,7 +13,7 @@ export default function ProductThumb() {
     const getAlter = altImg.data.find((item) => item.id === id);
     setAlter(altImg.data.find((item) => item.id === id));
   };
-  console.log("getAlter", alter);
+  // console.log("getAlter", alter);
 
   return (
     <>

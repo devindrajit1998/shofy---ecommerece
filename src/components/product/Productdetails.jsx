@@ -7,45 +7,45 @@ import { useProductProvider } from "../context/ProductContex";
 import Rating from "../common/Rating";
 
 export default function Productdetails() {
-  const { id } = useParams();
-  // console.log("id", id)
-  const { product } = useProductProvider();
+  const { singleProduct } = useProductProvider();
 
-  const FindSingleProduct = product
-    ? product.find((item) => item?.attributes?.createdAt === id)
-    : {};
+  const filterData = singleProduct?.attributes;
 
-  console.log("FindSingleProduct", FindSingleProduct);
-  // const singleProduct = FindSingleProduct?.attributes;
-  // const { name, description, mainPrice, offerPrice } = singleProduct;
-  const singleProduct = FindSingleProduct?.attributes;
-
-// Destructuring with a conditional check using &&
-const { name, description, mainPrice, offerPrice } = singleProduct || {};
-
-
-
+  const {
+    name,
+    description,
+    mainPrice,
+    offerPrice,
+    category,
+    stock,
+    subcategory,
+    brand,
+    specs,
+  } = filterData || {};
+  // console.log("specifications", Object.values(specs?.General));
 
   return (
     <>
       <Layout />
-      <Breadcum name="Samsung galaxy A7 tablet" />
+      <Breadcum name={name} />
       <section className="tp-product-details-area">
-        <div className="tp-product-details-top pb-115">
+        <div className="tp-product-details-top pb-115 pt-100">
           <div className="container">
             <div className="row">
-              <div className="col-xl-7 col-lg-6"><ProductThumb /> </div>
+              <div className="col-xl-7 col-lg-6">
+                <ProductThumb />
+              </div>
               {/* col end */}
               <div className="col-xl-5 col-lg-6">
                 <div className="tp-product-details-wrapper">
                   <div className="tp-product-details-category">
-                    <span>Computers &amp; Tablets</span>
+                    {/* <span>{category?.data.attributes.name}</span> */}
                   </div>
                   <h3 className="tp-product-details-title">{name}</h3>
                   {/* inventory details */}
                   <div className="tp-product-details-inventory d-flex align-items-center mb-10">
                     <div className="tp-product-details-stock mb-10">
-                      <span>In Stock</span>
+                      <span>{stock}</span>
                     </div>
                     <div className="tp-product-details-rating-wrapper d-flex align-items-center mb-10">
                       <Rating />
@@ -67,7 +67,7 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                   {/* variations */}
                   <div className="tp-product-details-variation">
                     {/* single item */}
-                    <div className="tp-product-details-variation-item">
+                    {/* <div className="tp-product-details-variation-item">
                       <h4 className="tp-product-details-variation-title">
                         Color :
                       </h4>
@@ -121,7 +121,7 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                           </span>
                         </button>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                   {/* actions */}
                   <div className="tp-product-details-action-wrapper">
@@ -228,33 +228,19 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                   </div>
                   <div className="tp-product-details-query">
                     <div className="tp-product-details-query-item d-flex align-items-center">
-                      <span>SKU:</span>
-                      <p>NTB7SDVX44</p>
+                      <span>Brand:</span>
+                      <p>{brand}</p>
                     </div>
                     <div className="tp-product-details-query-item d-flex align-items-center">
                       <span>Category:</span>
-                      <p>Computers &amp; Tablets</p>
+                      <p>{category?.data.attributes.name}</p>
                     </div>
                     <div className="tp-product-details-query-item d-flex align-items-center">
                       <span>Tag: </span>
-                      <p>Android</p>
+                      <p>{subcategory?.data.attributes.name}</p>
                     </div>
                   </div>
-                  <div className="tp-product-details-social">
-                    <span>Share: </span>
-                    <a href="#">
-                      <i className="fa-brands fa-facebook-f" />
-                    </a>
-                    <a href="#">
-                      <i className="fa-brands fa-twitter" />
-                    </a>
-                    <a href="#">
-                      <i className="fa-brands fa-linkedin-in" />
-                    </a>
-                    <a href="#">
-                      <i className="fa-brands fa-vimeo-v" />
-                    </a>
-                  </div>
+
                   <div className="tp-product-details-msg mb-15">
                     <ul>
                       <li>30 days easy returns</li>
@@ -265,10 +251,7 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                     <p>
                       Guaranteed safe <br /> &amp; secure checkout
                     </p>
-                    <img
-                      src="assets/img/product/icons/payment-option.png"
-                      alt=""
-                    />
+                    <img src="img/product/icons/payment-option.png" alt="" />
                   </div>
                 </div>
               </div>
@@ -299,7 +282,7 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                         Description
                       </button>
                       <button
-                        className="nav-link"
+                        className="nav-link active"
                         id="nav-addInfo-tab"
                         data-bs-toggle="tab"
                         data-bs-target="#nav-addInfo"
@@ -311,7 +294,7 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                         Additional information
                       </button>
                       <button
-                        className="nav-link active"
+                        className="nav-link "
                         id="nav-review-tab"
                         data-bs-toggle="tab"
                         data-bs-target="#nav-review"
@@ -322,11 +305,6 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                       >
                         Reviews (2)
                       </button>
-                      <span
-                        id="productTabMarker"
-                        className="tp-product-details-tab-line"
-                        style={{ left: 789, display: "block", width: 122 }}
-                      />
                     </div>
                   </nav>
                   <div className="tab-content" id="navPresentationTabContent">
@@ -341,98 +319,14 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                         <div className="row justify-content-center">
                           <div className="col-xl-10">
                             <div className="tp-product-details-desc-item pb-105">
-                              <div className="row">
-                                <div className="col-lg-6">
-                                  <div className="tp-product-details-desc-content pt-25">
-                                    <span>Galaxy A8 tablet</span>
-                                    <h3 className="tp-product-details-desc-title">
-                                      Your world at a glance
-                                    </h3>
-                                    <p>
-                                      With a slim design, a vibrant
-                                      entertainment system, and <br />{" "}
-                                      outstanding performance, the new Galaxy
-                                      Tab A7 is a stylish new <br /> companion
-                                      for your life.Dive head-first into the
-                                      things you love, <br /> and easily share
-                                      your favorite moments. Learn, explore,
-                                      connect <br /> and be inspired.
-                                    </p>
-                                  </div>
-                                  <div className="tp-product-details-desc-content">
-                                    <h3 className="tp-product-details-desc-title">
-                                      Draw inspiration with S Pen
-                                    </h3>
-                                    <p>
-                                      S Pen is a bundle of writing instruments
-                                      in one. Its natural grip, <br /> low
-                                      latency and impressive pressure
-                                      sensitivity will make it your go-to for
-                                      everything from drawing to editing
-                                      documents. And S Pen won't get misplaced
-                                      thanks.
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className="col-lg-6">
-                                  <div className="tp-product-details-desc-thumb">
-                                    <img
-                                      src="assets/img/product/details/desc/product-details-desc-1.jpg"
-                                      alt=""
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="tp-product-details-desc-item  pb-75">
-                              <div className="row">
-                                <div className="col-lg-7">
-                                  <div className="tp-product-details-desc-thumb">
-                                    <img
-                                      src="assets/img/product/details/desc/product-details-desc-2.jpg"
-                                      alt=""
-                                    />
-                                  </div>
-                                </div>
-                                <div className="col-lg-5 order-first order-lg-last">
-                                  <div className="tp-product-details-desc-content des-content-2 pl-40">
-                                    <h3 className="tp-product-details-desc-title">
-                                      Carry with <br /> Confidence and style
-                                    </h3>
-                                    <p>
-                                      Wrap your tablet in a sleek case that's as
-                                      stylish as it is convenient. Galaxy Tab S6
-                                      Lite Book Cover folds around and clings
-                                      magnetically, so you can easily gear up as
-                                      you're headed out the door. There's even a
-                                      compartment for S pen, so you can be sure
-                                      it doesn't get left behind.
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="tp-product-details-desc-item">
-                              <div className="row">
-                                <div className="col-xl-12">
-                                  <div className="tp-product-details-desc-banner text-center m-img">
-                                    <h3 className="tp-product-details-desc-banner-title tp-product-details-desc-title">
-                                      Speed Memory Power = Epic Races
-                                    </h3>
-                                    <img
-                                      src="assets/img/product/details/desc/product-details-desc-3.jpg"
-                                      alt=""
-                                    />
-                                  </div>
-                                </div>
-                              </div>
+                              <p>{description}</p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div
-                      className="tab-pane fade"
+                      className="tab-pane fade  active show"
                       id="nav-addInfo"
                       role="tabpanel"
                       aria-labelledby="nav-addInfo-tab"
@@ -443,86 +337,27 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                           <div className="col-xl-10">
                             <table>
                               <tbody>
-                                <tr>
-                                  <td>Standing screen display size</td>
-                                  <td>Screen display Size 10.4</td>
-                                </tr>
-                                <tr>
-                                  <td>Color</td>
-                                  <td>Gray, Dark gray, Mystic black</td>
-                                </tr>
-                                <tr>
-                                  <td>Screen Resolution</td>
-                                  <td>1920 x 1200 Pixels</td>
-                                </tr>
-                                <tr>
-                                  <td>Max Screen Resolution</td>
-                                  <td>2000 x 1200</td>
-                                </tr>
-                                <tr>
-                                  <td>Processor</td>
-                                  <td>2.3 GHz (128 GB)</td>
-                                </tr>
-                                <tr>
-                                  <td>Graphics Coprocessor</td>
-                                  <td>
-                                    Exynos 9611, Octa Core (4x2.3GHz + 4x1.7GHz)
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Wireless Type</td>
-                                  <td>802.11a/b/g/n/ac, Bluetooth</td>
-                                </tr>
-                                <tr>
-                                  <td>Average Battery Life (in hours)</td>
-                                  <td>13 Hours</td>
-                                </tr>
-                                <tr>
-                                  <td>Average Battery Life (in hours)</td>
-                                  <td>13 Hours</td>
-                                </tr>
-                                <tr>
-                                  <td>Series</td>
-                                  <td>Samsung Galaxy tab S6 Lite WiFi</td>
-                                </tr>
-                                <tr>
-                                  <td>Item model number</td>
-                                  <td>SM-P6102ZAEXOR</td>
-                                </tr>
-                                <tr>
-                                  <td>Hardware Platform</td>
-                                  <td>Android</td>
-                                </tr>
-                                <tr>
-                                  <td>Operating System</td>
-                                  <td>Android 12</td>
-                                </tr>
-                                <tr>
-                                  <td>Batteries</td>
-                                  <td>
-                                    1 Lithium Polymer batteries required.
-                                    (included)
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Batteries</td>
-                                  <td>
-                                    1 Lithium Polymer batteries required.
-                                    (included)
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Product Dimensions</td>
-                                  <td>0.28 x 6.07 x 9.63 inches</td>
-                                </tr>
-                                <tr>
-                                  <td>Product Dimensions</td>
-                                  <td>0.28 x 6.07 x 9.63 inches</td>
-                                </tr>
-                                <tr>
-                                  <td>Product Dimensions</td>
-                                  <td>0.28 x 6.07 x 9.63 inches</td>
-                                </tr>
+                                {/* {Object.entries(specs).map(
+                                  ([category, categoryData]) => (
+                                    <React.Fragment key={category}>
+                                      <tr>
+                                        <th colSpan="2">{category}</th>
+                                      </tr>
+                                      {Object.entries(categoryData).map(
+                                        ([key, value]) => (
+                                          <tr key={key}>
+                                            <td>{key}</td>
+                                            <td>
+                                              {Array.isArray(value)
+                                                ? value.join(", ")
+                                                : value}
+                                            </td>
+                                          </tr>
+                                        )
+                                      )}
+                                    </React.Fragment>
+                                  )
+                                )} */}
                               </tbody>
                             </table>
                           </div>
@@ -530,7 +365,7 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                       </div>
                     </div>
                     <div
-                      className="tab-pane fade active show"
+                      className="tab-pane fade"
                       id="nav-review"
                       role="tabpanel"
                       aria-labelledby="nav-review-tab"
@@ -655,7 +490,7 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                                   <div className="tp-product-details-review-avater-thumb">
                                     <a href="#">
                                       <img
-                                        src="assets/img/users/user-3.jpg"
+                                        src="img/users/user-3.jpg"
                                         alt=""
                                       />
                                     </a>
@@ -697,7 +532,7 @@ const { name, description, mainPrice, offerPrice } = singleProduct || {};
                                   <div className="tp-product-details-review-avater-thumb">
                                     <a href="#">
                                       <img
-                                        src="assets/img/users/user-2.jpg"
+                                        src="img/users/user-2.jpg"
                                         alt=""
                                       />
                                     </a>

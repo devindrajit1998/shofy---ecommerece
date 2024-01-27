@@ -14,6 +14,7 @@ const ProductProvider = ({ children }) => {
   const [trending, setTrending] = useState();
   const [sale, setSale] = useState();
   const [modalProduct, setModalProduct] = useState();
+  const [singleProduct, setSingleProduct] = useState();
   // fetch category data =============================>
   const getCate = async () => {
     const options = {
@@ -111,7 +112,7 @@ const ProductProvider = ({ children }) => {
       const saleProduct = product.filter(
         (item) => item.attributes.sale === true
       );
-      console.log("trend=======>>>>>>", saleProduct);
+      // console.log("trend=======>>>>>>", saleProduct);
       if (saleProduct) {
         setSale(saleProduct);
       }
@@ -119,20 +120,37 @@ const ProductProvider = ({ children }) => {
   }, [product]);
 
   // product modal function =================>
+  useEffect(() => {
+    setModalProduct(JSON.parse(localStorage.getItem("targetProduct")));
+  }, []);
 
   const TargetProduct = (createdAt) => {
     const findTargetProduct = product.find(
       (items) => items.attributes.createdAt === createdAt
     );
+    localStorage.setItem("targetProduct", JSON.stringify(findTargetProduct));
+
     setModalProduct(findTargetProduct);
-    console.log("findTargetProduct", findTargetProduct);
+    // console.log("findTargetProduct", findTargetProduct);
   };
   // console.log("Product", product);
 
   // find single product function =================>
 
+  useEffect(() => {
+    setSingleProduct(JSON.parse(localStorage.getItem("SingleProduct")));
+  }, []);
 
+  const getSingleProduct = (createdAt) => {
+    const getData = product.find(
+      (item) => item.attributes.createdAt === createdAt
+    );
+    localStorage.setItem("SingleProduct", JSON.stringify(getData));
+    setSingleProduct(getData);
+    TargetProduct(createdAt);
+  };
 
+  console.log("singleProduct", singleProduct);
   // Return the JSX with ProductContext.Provider
 
   return (
@@ -146,7 +164,10 @@ const ProductProvider = ({ children }) => {
         sale,
         modalProduct,
         TargetProduct,
-      }}>
+        getSingleProduct,
+        singleProduct,
+      }}
+    >
       {children}
     </ProductContext.Provider>
   );

@@ -3474,10 +3474,18 @@ div.demo img {
   font-weight: 400;
   font-size: 16px;
   position: relative;
+ 
 }
 .breadcrumb__list span:not(:last-child) {
   padding-right: 12px;
   margin-right: 5px;
+}
+.breadcrumb__list span:last-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 350px;
+  display: block;
 }
 .breadcrumb__list span:not(:last-child)::after {
   position: absolute;
@@ -17113,6 +17121,7 @@ product all slider
 .tp-product-details-category span {
   font-size: 16px;
   line-height: 1;
+  text-transform: uppercase;
 }
 .tp-product-details-category span a:hover {
   color: var(--tp-theme-primary);
@@ -17133,6 +17142,7 @@ product all slider
   background-color: rgba(9, 137, 255, 0.06);
   line-height: 1;
   padding: 4px 12px;
+  text-transform: capitalize;
 }
 .tp-product-details-rating {
   margin-right: 11px;
@@ -17380,6 +17390,7 @@ product all slider
   font-size: 15px;
   margin-bottom: 0;
   line-height: 1.4;
+  text-transform: uppercase;
 }
 .tp-product-details-social {
   margin-bottom: 22px;

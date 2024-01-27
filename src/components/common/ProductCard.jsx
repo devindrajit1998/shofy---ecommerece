@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 export default function ProductCard( props ) {
   const {data} = props;
   const { name, offerPrice, mainPrice, thumbnail ,category, createdAt} = data ? data : {};
-  const {BASE_URL, TargetProduct} = useProductProvider();
+  const {BASE_URL, TargetProduct, getSingleProduct} = useProductProvider();
   const ProductID = createdAt;
 
-    console.log("common=====>", ProductID);
+    // console.log("common=====>", ProductID);
   return (
     <>
       <div className="tp-product-item p-relative transition-3 mb-25">
@@ -139,7 +139,7 @@ export default function ProductCard( props ) {
             <a href="!#">{data && category.data.attributes.name}</a>
           </div>
           <h3 className="tp-product-title">
-          <Link to={`/product/${ProductID}`} onClick={()=>TargetProduct(data.createdAt)}>
+          <Link to={`/product`} onClick={()=>getSingleProduct(data.createdAt)}>
           {name}
           </Link>
            

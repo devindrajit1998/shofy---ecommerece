@@ -10,7 +10,7 @@ export default function Breadcum(props) {
             <div className="col-xxl-12">
               <div className="breadcrumb__content p-relative z-index-1">
                 {/* <h3 className="breadcrumb__title">{props.name}</h3> */}
-                <div className="breadcrumb__list">
+                <div className="breadcrumb__list d-flex">
                   <span>
                     <Link to="/">Home</Link>
                   </span>
