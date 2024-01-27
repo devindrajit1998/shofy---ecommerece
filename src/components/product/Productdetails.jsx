@@ -15,10 +15,16 @@ export default function Productdetails() {
     ? product.find((item) => item?.attributes?.createdAt === id)
     : {};
 
-  console.log('FindSingleProduct', FindSingleProduct);
+  console.log("FindSingleProduct", FindSingleProduct);
+  // const singleProduct = FindSingleProduct?.attributes;
+  // const { name, description, mainPrice, offerPrice } = singleProduct;
+  const singleProduct = FindSingleProduct?.attributes;
 
-  const { name, description, mainPrice, offerPrice } = FindSingleProduct
-    && FindSingleProduct.attributes;
+// Destructuring with a conditional check using &&
+const { name, description, mainPrice, offerPrice } = singleProduct || {};
+
+
+
 
   return (
     <>
@@ -28,9 +34,7 @@ export default function Productdetails() {
         <div className="tp-product-details-top pb-115">
           <div className="container">
             <div className="row">
-              <div className="col-xl-7 col-lg-6">
-                <ProductThumb />
-              </div>{" "}
+              <div className="col-xl-7 col-lg-6">{/* <ProductThumb /> */}</div>{" "}
               {/* col end */}
               <div className="col-xl-5 col-lg-6">
                 <div className="tp-product-details-wrapper">
