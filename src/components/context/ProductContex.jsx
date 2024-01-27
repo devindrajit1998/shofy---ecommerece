@@ -127,7 +127,11 @@ const ProductProvider = ({ children }) => {
     setModalProduct(findTargetProduct);
     console.log("findTargetProduct", findTargetProduct);
   };
-  console.log("Product", product);
+  // console.log("Product", product);
+
+  // find single product function =================>
+
+
 
   // Return the JSX with ProductContext.Provider
 
@@ -141,9 +145,8 @@ const ProductProvider = ({ children }) => {
         trending,
         sale,
         modalProduct,
-        TargetProduct
-      }}
-    >
+        TargetProduct,
+      }}>
       {children}
     </ProductContext.Provider>
   );

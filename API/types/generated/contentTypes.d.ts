@@ -362,226 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiBannerBanner extends Schema.CollectionType {
-  collectionName: 'banners';
-  info: {
-    singularName: 'banner';
-    pluralName: 'banners';
-    displayName: 'Banner';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    price: Attribute.Decimal;
-    title: Attribute.String;
-    discount: Attribute.Integer;
-    img: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::banner.banner',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
-  info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'category';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    img: Attribute.Media;
-    subcategories: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::subcategory.subcategory'
-    >;
-    products: Attribute.Relation<
-      'api::category.category',
-      'oneToMany',
-      'api::product.product'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCuponCupon extends Schema.CollectionType {
-  collectionName: 'cupons';
-  info: {
-    singularName: 'cupon';
-    pluralName: 'cupons';
-    displayName: 'cupon';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    code: Attribute.String;
-    discount: Attribute.Integer;
-    status: Attribute.Boolean;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::cupon.cupon',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::cupon.cupon',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiMenuMenu extends Schema.CollectionType {
-  collectionName: 'menus';
-  info: {
-    singularName: 'menu';
-    pluralName: 'menus';
-    displayName: 'menu';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiProductProduct extends Schema.CollectionType {
-  collectionName: 'products';
-  info: {
-    singularName: 'product';
-    pluralName: 'products';
-    displayName: 'product';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    description: Attribute.Text;
-    thumbnail: Attribute.Media;
-    alterImg: Attribute.Media;
-    category: Attribute.Relation<
-      'api::product.product',
-      'manyToOne',
-      'api::category.category'
-    >;
-    sale: Attribute.Boolean;
-    feature: Attribute.Boolean;
-    trending: Attribute.Boolean;
-    mainPrice: Attribute.Decimal;
-    offerPrice: Attribute.Decimal;
-    brand: Attribute.String;
-    subcategories: Attribute.Relation<
-      'api::product.product',
-      'oneToMany',
-      'api::subcategory.subcategory'
-    >;
-    specs: Attribute.JSON;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::product.product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSubcategorySubcategory extends Schema.CollectionType {
-  collectionName: 'subcategories';
-  info: {
-    singularName: 'subcategory';
-    pluralName: 'subcategories';
-    displayName: 'subcategory';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    category: Attribute.Relation<
-      'api::subcategory.subcategory',
-      'manyToOne',
-      'api::category.category'
-    >;
-    product: Attribute.Relation<
-      'api::subcategory.subcategory',
-      'manyToOne',
-      'api::product.product'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::subcategory.subcategory',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::subcategory.subcategory',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -988,6 +768,227 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiBannerBanner extends Schema.CollectionType {
+  collectionName: 'banners';
+  info: {
+    singularName: 'banner';
+    pluralName: 'banners';
+    displayName: 'Banner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    price: Attribute.Decimal;
+    title: Attribute.String;
+    discount: Attribute.Integer;
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banner.banner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCategoryCategory extends Schema.CollectionType {
+  collectionName: 'categories';
+  info: {
+    singularName: 'category';
+    pluralName: 'categories';
+    displayName: 'category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    img: Attribute.Media;
+    subcategories: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::subcategory.subcategory'
+    >;
+    products: Attribute.Relation<
+      'api::category.category',
+      'oneToMany',
+      'api::product.product'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCuponCupon extends Schema.CollectionType {
+  collectionName: 'cupons';
+  info: {
+    singularName: 'cupon';
+    pluralName: 'cupons';
+    displayName: 'cupon';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    code: Attribute.String;
+    discount: Attribute.Integer;
+    status: Attribute.Boolean;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cupon.cupon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cupon.cupon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMenuMenu extends Schema.CollectionType {
+  collectionName: 'menus';
+  info: {
+    singularName: 'menu';
+    pluralName: 'menus';
+    displayName: 'menu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'product';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    description: Attribute.Text;
+    thumbnail: Attribute.Media;
+    alterImg: Attribute.Media;
+    category: Attribute.Relation<
+      'api::product.product',
+      'manyToOne',
+      'api::category.category'
+    >;
+    sale: Attribute.Boolean;
+    feature: Attribute.Boolean;
+    trending: Attribute.Boolean;
+    mainPrice: Attribute.Decimal;
+    offerPrice: Attribute.Decimal;
+    brand: Attribute.String;
+    specs: Attribute.JSON;
+    subcategory: Attribute.Relation<
+      'api::product.product',
+      'manyToOne',
+      'api::subcategory.subcategory'
+    >;
+    stock: Attribute.Enumeration<['in stock', 'out of stock']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSubcategorySubcategory extends Schema.CollectionType {
+  collectionName: 'subcategories';
+  info: {
+    singularName: 'subcategory';
+    pluralName: 'subcategories';
+    displayName: 'subcategory';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    category: Attribute.Relation<
+      'api::subcategory.subcategory',
+      'manyToOne',
+      'api::category.category'
+    >;
+    products: Attribute.Relation<
+      'api::subcategory.subcategory',
+      'oneToMany',
+      'api::product.product'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::subcategory.subcategory',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::subcategory.subcategory',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -998,12 +999,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::banner.banner': ApiBannerBanner;
-      'api::category.category': ApiCategoryCategory;
-      'api::cupon.cupon': ApiCuponCupon;
-      'api::menu.menu': ApiMenuMenu;
-      'api::product.product': ApiProductProduct;
-      'api::subcategory.subcategory': ApiSubcategorySubcategory;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -1012,6 +1007,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::banner.banner': ApiBannerBanner;
+      'api::category.category': ApiCategoryCategory;
+      'api::cupon.cupon': ApiCuponCupon;
+      'api::menu.menu': ApiMenuMenu;
+      'api::product.product': ApiProductProduct;
+      'api::subcategory.subcategory': ApiSubcategorySubcategory;
     }
   }
 }

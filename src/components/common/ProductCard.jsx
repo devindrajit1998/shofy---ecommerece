@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { useProductProvider } from "../context/ProductContex";
+import { Link } from "react-router-dom";
 
 export default function ProductCard( props ) {
   const {data} = props;
-  const { name, offerPrice, mainPrice, thumbnail ,category} = data ? data : {};
-  const {BASE_URL, TargetProduct, product} = useProductProvider();
+  const { name, offerPrice, mainPrice, thumbnail ,category, createdAt} = data ? data : {};
+  const {BASE_URL, TargetProduct} = useProductProvider();
+  const ProductID = createdAt;
 
+    console.log("common=====>", ProductID);
   return (
     <>
       <div className="tp-product-item p-relative transition-3 mb-25">
@@ -136,7 +139,10 @@ export default function ProductCard( props ) {
             <a href="!#">{data && category.data.attributes.name}</a>
           </div>
           <h3 className="tp-product-title">
-            <a href="product-details.html">{name}</a>
+          <Link to={`/product/${ProductID}`} onClick={()=>TargetProduct(data.createdAt)}>
+          {name}
+          </Link>
+           
           </h3>
           <div className="tp-product-rating d-flex align-items-center">
             <div className="tp-product-rating-icon">
