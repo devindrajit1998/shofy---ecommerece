@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * cupon router
+ * coupon router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::cupon.cupon');
+module.exports = createCoreRouter('api::coupon.coupon');

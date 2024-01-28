@@ -16,7 +16,7 @@ import { useProductProvider } from "../context/ProductContex";
 import ProductModal from "../common/ProductModal";
 
 export default function Home(id) {
-  const { category, product, trending , sale} = useProductProvider();
+  const { category,  trending , sale} = useProductProvider();
 
   return (
     <>

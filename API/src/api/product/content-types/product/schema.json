@@ -79,6 +79,9 @@
         "in stock",
         "out of stock"
       ]
+    },
+    "stocks": {
+      "type": "integer"
     }
   }
 }

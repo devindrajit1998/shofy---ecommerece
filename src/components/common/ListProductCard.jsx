@@ -2,11 +2,12 @@ import React from "react";
 import { useProductProvider } from "../context/ProductContex";
 import Rating from "./Rating";
 import CommonBtn from "./CommonBtn";
+import { Link } from "react-router-dom";
 
 export default function ListProductCard(data) {
-  const { name, description, brand, offerPrice, mainPrice, thumbnail ,category, createdAt} = data.data;
-  const {BASE_URL, TargetProduct} = useProductProvider();
-  console.log("listData", data.data)
+  const { name, description, brand, offerPrice, mainPrice, thumbnail, createdAt} = data.data;
+  const {BASE_URL, TargetProduct, getSingleProduct, findCart} = useProductProvider();
+
   return (
     <>
       <div className="tp-product-list-item d-md-flex">
@@ -138,18 +139,20 @@ export default function ListProductCard(data) {
               <a href="#">{brand}</a>
             </div>
             <h3 className="tp-product-title-2 limited_lines-1">
-              <a href="!#">{name}</a>
-            </h3>
+            <Link to={`/product`} onClick={() => getSingleProduct(createdAt)}>
+              {name}
+            </Link>
+             </h3>
            <Rating/>
             <div className="tp-product-price-wrapper-2">
-              <span className="tp-product-price-2 new-price">${offerPrice}</span>
-              <span className="tp-product-price-2 old-price">${mainPrice}</span>
+              <span className="tp-product-price-2 new-price">₹{offerPrice}</span>
+              <span className="tp-product-price-2 old-price">₹{mainPrice}</span>
             </div>
             <p className="limited_lines-3">
              {description}
             </p>
             <div className="tp-product-list-add-to-cart">
-             <CommonBtn name='Add to cart' style='add-to-cart' width='w-20'/>
+            <CommonBtn name='Add to cart' style='add-to-cart' width='w-20' func={() => findCart(createdAt)} />
             </div>
           </div>
         </div>

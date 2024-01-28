@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "free_shippings",
+  "info": {
+    "singularName": "free-shipping",
+    "pluralName": "free-shippings",
+    "displayName": "free shipping"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "integer"
+    }
+  }
+}

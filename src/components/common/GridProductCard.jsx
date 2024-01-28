@@ -1,10 +1,12 @@
 import React from "react";
 import Rating from "./Rating";
 import { useProductProvider } from "../context/ProductContex";
+import { Link } from "react-router-dom";
 
 export default function GridProductCard(data) {
-  const { name, brand, offerPrice, mainPrice, thumbnail ,category, createdAt} = data.data;
-  const {BASE_URL, TargetProduct} = useProductProvider();
+  const { name, brand, offerPrice, mainPrice, thumbnail, createdAt } =
+    data.data;
+  const { BASE_URL, TargetProduct, getSingleProduct } = useProductProvider();
   // console.log("gridData", data.data)
   return (
     <>
@@ -73,7 +75,7 @@ export default function GridProductCard(data) {
                 className="tp-product-action-btn-2 tp-product-quick-view-btn"
                 data-bs-toggle="modal"
                 data-bs-target="#producQuickViewModal"
-                onClick={()=>TargetProduct(createdAt)}
+                onClick={() => TargetProduct(createdAt)}
               >
                 <svg
                   width={18}
@@ -135,12 +137,14 @@ export default function GridProductCard(data) {
             <a href="#">{brand}</a>
           </div>
           <h3 className="tp-product-title-2 limited_lines-2">
-            <a href="#">{name}</a>
+            <Link to={`/product`} onClick={() => getSingleProduct(createdAt)}>
+              {name}
+            </Link>
           </h3>
           <Rating />
           <div className="tp-product-price-wrapper-2">
-            <span className="tp-product-price-2 new-price">${offerPrice}</span>
-            <span className="tp-product-price-2 old-price">${mainPrice}</span>
+            <span className="tp-product-price-2 new-price">₹{offerPrice}</span>
+            <span className="tp-product-price-2 old-price">₹{mainPrice}</span>
           </div>
         </div>
       </div>

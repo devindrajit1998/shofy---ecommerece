@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../layout/Layout";
 import Breadcum from "../common/Breadcum";
-import ProductCard from "../common/ProductCard";
 import Pagination from "../common/Pagination";
 import Footer from "../common/Footer";
 import FilterInput from "../common/FilterInput";
@@ -11,7 +10,7 @@ import ListProductCard from "../common/ListProductCard";
 import ProductModal from "../common/ProductModal";
 
 export default function Shop() {
-  const { category, product } = useProductProvider();
+  const { category, product, saleFilter } = useProductProvider();
   return (
     <>
       <Layout />
@@ -29,7 +28,7 @@ export default function Shop() {
                       <div className="tp-shop-widget-checkbox">
                         <ul className="filter-items filter-checkbox">
                           <li className="filter-item checkbox">
-                            <FilterInput cate="sale" name="On Sale Products" />
+                            <FilterInput cate="sale" name="On Sale Products" func={saleFilter}/>
                           </li>
                           <li className="filter-item checkbox">
                             <FilterInput
@@ -56,10 +55,7 @@ export default function Shop() {
                         <ul>
                           {category
                             ? category.map((item) => {
-                                console.log(
-                                  "catitem",
-                                  item.attributes.products.data.length
-                                );
+                               
                                 return (
                                   <>
                                     <li>

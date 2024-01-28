@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useProductProvider } from "../context/ProductContex";
 
 export default function CommonNav({ overlay, body, Open, mobile, OpenMobile }) {
+  const { cart, BASE_URL, getSingleProduct, RemoveSingle, subTotal, shipping } =
+    useProductProvider();
+
+// calculate shipping percentage ==============>
+const calPercentage =(100 * subTotal) / shipping?.attributes.amount;
+const Percentage = calPercentage.toFixed(0);
+console.log("calPercentage", calPercentage)
+
+
+  const [showEmpty, setShowEmpty] = useState("d-none");
+  const [showCart, setShowCart] = useState("d-block");
+  if (cart.length === 0) {
+    // setShowEmpty('d-block');
+    // setShowCart('d-none');
+  }
   return (
     <>
       {/* pre loader area start */}
@@ -70,7 +86,10 @@ export default function CommonNav({ overlay, body, Open, mobile, OpenMobile }) {
       <div className={`offcanvas__area offcanvas__radius ${mobile}`}>
         <div className="offcanvas__wrapper">
           <div className="offcanvas__close">
-            <button className="offcanvas__close-btn offcanvas-close-btn" onClick={()=>OpenMobile()}>
+            <button
+              className="offcanvas__close-btn offcanvas-close-btn"
+              onClick={() => OpenMobile()}
+            >
               <svg
                 width={12}
                 height={12}
@@ -233,44 +252,61 @@ export default function CommonNav({ overlay, body, Open, mobile, OpenMobile }) {
             </div>
             <div className="cartmini__shipping">
               <p>
-                {" "}
-                Free Shipping for all orders over <span>$50</span>
+                Free Shipping for all orders over <span>₹ {shipping?.attributes.amount}</span>
               </p>
               <div className="progress">
                 <div
                   className="progress-bar progress-bar-striped progress-bar-animated"
                   role="progressbar"
-                  data-width="70%"
-                  aria-valuenow={70}
-                  aria-valuemin={0}
-                  aria-valuemax={100}
+                  style={{ width: `${Percentage}%` }}
                 />
               </div>
             </div>
-            <div className="cartmini__widget">
-              <div className="cartmini__widget-item">
-                <div className="cartmini__thumb">
-                  <a href="!#">
-                    <img src="img/product/product-1.jpg" alt="" />
-                  </a>
-                </div>
-                <div className="cartmini__content">
-                  <h5 className="cartmini__title">
-                    <a href="!#">Level Bolt Smart Lock</a>
-                  </h5>
-                  <div className="cartmini__price-wrapper">
-                    <span className="cartmini__price">$46.00</span>
-                    <span className="cartmini__quantity">x2</span>
-                  </div>
-                </div>
-                <a href="!#" className="cartmini__del">
-                  <i className="fa-regular fa-xmark" />
-                </a>
-              </div>
+            <div className={`cartmini__widget ${showCart}`}>
+              {cart?.map((items) => {
+                const { name, offerPrice, quantity, thumbnail, createdAt } =
+                  items?.data?.attributes;
+                return (
+                  <>
+                    <div className="cartmini__widget-item">
+                      <div className="cartmini__thumb">
+                        <a href="!#">
+                          <img
+                            src={BASE_URL + thumbnail.data.attributes.url}
+                            alt=""
+                          />
+                        </a>
+                      </div>
+                      <div className="cartmini__content">
+                        <h5 className="cartmini__title limited_lines-2">
+                          <Link
+                            to={`/product`}
+                            onClick={() => getSingleProduct(createdAt)}
+                          >
+                            {name}
+                          </Link>
+                        </h5>
+                        <div className="cartmini__price-wrapper">
+                          <span className="cartmini__price">₹{offerPrice}</span>
+                          <span className="cartmini__quantity">
+                            x{quantity}
+                          </span>
+                        </div>
+                      </div>
+                      <Link
+                        className="cartmini__del"
+                        onClick={() => RemoveSingle(createdAt)}
+                      >
+                        <i className="fa-regular fa-xmark" />
+                      </Link>
+                    </div>
+                  </>
+                );
+              })}
             </div>
             {/* for wp */}
             {/* if no item in cart */}
-            <div className="cartmini__empty text-center d-none">
+            <div className={`cartmini__empty text-center ${showEmpty} `}>
               <img src="img/product/cartmini/empty-cart.png" alt="" />
               <p>Your Cart is empty</p>
               <a href="!#" className="tp-btn">
@@ -281,7 +317,7 @@ export default function CommonNav({ overlay, body, Open, mobile, OpenMobile }) {
           <div className="cartmini__checkout">
             <div className="cartmini__checkout-title mb-30">
               <h4>Subtotal:</h4>
-              <span>$113.00</span>
+              <span>₹{subTotal}</span>
             </div>
             <div className="cartmini__checkout-btn">
               <a href="!#" className="tp-btn mb-10 w-100">

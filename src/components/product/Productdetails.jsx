@@ -7,7 +7,7 @@ import { useProductProvider } from "../context/ProductContex";
 import Rating from "../common/Rating";
 
 export default function Productdetails() {
-  const { singleProduct } = useProductProvider();
+  const { singleProduct, findCart } = useProductProvider();
 
   const filterData = singleProduct?.attributes;
 
@@ -21,6 +21,8 @@ export default function Productdetails() {
     subcategory,
     brand,
     specs,
+    createdAt,
+    stocks
   } = filterData || {};
   // console.log("specifications", Object.values(specs?.General));
 
@@ -67,61 +69,22 @@ export default function Productdetails() {
                   {/* variations */}
                   <div className="tp-product-details-variation">
                     {/* single item */}
-                    {/* <div className="tp-product-details-variation-item">
-                      <h4 className="tp-product-details-variation-title">
-                        Color :
-                      </h4>
-                      <div className="tp-product-details-variation-list">
-                        <button
-                          type="button"
-                          className="color tp-color-variation-btn"
-                        >
-                          <span
-                            data-bg-color="#F8B655"
-                            style={{ backgroundColor: "rgb(248, 182, 85)" }}
-                          />
-                          <span className="tp-color-variation-tootltip">
-                            Yellow
-                          </span>
-                        </button>
-                        <button
-                          type="button"
-                          className="color tp-color-variation-btn active"
-                        >
-                          <span
-                            data-bg-color="#CBCBCB"
-                            style={{ backgroundColor: "rgb(203, 203, 203)" }}
-                          />
-                          <span className="tp-color-variation-tootltip">
-                            Gray
-                          </span>
-                        </button>
-                        <button
-                          type="button"
-                          className="color tp-color-variation-btn"
-                        >
-                          <span
-                            data-bg-color="#494E52"
-                            style={{ backgroundColor: "rgb(73, 78, 82)" }}
-                          />
-                          <span className="tp-color-variation-tootltip">
-                            Black
-                          </span>
-                        </button>
-                        <button
-                          type="button"
-                          className="color tp-color-variation-btn"
-                        >
-                          <span
-                            data-bg-color="#B4505A"
-                            style={{ backgroundColor: "rgb(180, 80, 90)" }}
-                          />
-                          <span className="tp-color-variation-tootltip">
-                            Brown
-                          </span>
-                        </button>
+                    <div className="tp-product-details-stock-bar mb-25">
+                      <p>
+                        Hurry! Only <span>{stocks}</span> units left in stock!
+                      </p>
+                      <div
+                        className="tp-product-details-stock-bar-line"
+                        data-bg-color="#D3DAE1"
+                        style={{ backgroundColor: "rgb(211, 218, 225)" }}
+                      >
+                        <span
+                          className="tp-product-details-stock-bar-line-inner"
+                          data-width="40%"
+                          style={{ width: "12%" }}
+                        />
                       </div>
-                    </div> */}
+                    </div>
                   </div>
                   {/* actions */}
                   <div className="tp-product-details-action-wrapper">
@@ -180,7 +143,10 @@ export default function Productdetails() {
                         </div>
                       </div>
                       <div className="tp-product-details-add-to-cart mb-15 w-100">
-                        <button className="tp-product-details-add-to-cart-btn w-100">
+                        <button
+                          className="tp-product-details-add-to-cart-btn w-100"
+                          onClick={() => findCart(createdAt)}
+                        >
                           Add To Cart
                         </button>
                       </div>
@@ -489,10 +455,7 @@ export default function Productdetails() {
                                 <div className="tp-product-details-review-avater d-flex align-items-start">
                                   <div className="tp-product-details-review-avater-thumb">
                                     <a href="#">
-                                      <img
-                                        src="img/users/user-3.jpg"
-                                        alt=""
-                                      />
+                                      <img src="img/users/user-3.jpg" alt="" />
                                     </a>
                                   </div>
                                   <div className="tp-product-details-review-avater-content">
@@ -531,10 +494,7 @@ export default function Productdetails() {
                                 <div className="tp-product-details-review-avater d-flex align-items-start">
                                   <div className="tp-product-details-review-avater-thumb">
                                     <a href="#">
-                                      <img
-                                        src="img/users/user-2.jpg"
-                                        alt=""
-                                      />
+                                      <img src="img/users/user-2.jpg" alt="" />
                                     </a>
                                   </div>
                                   <div className="tp-product-details-review-avater-content">

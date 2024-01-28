@@ -990,31 +990,65 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiCuponCupon extends Schema.CollectionType {
-  collectionName: 'cupons';
+export interface ApiCouponCoupon extends Schema.CollectionType {
+  collectionName: 'coupons';
   info: {
-    singularName: 'cupon';
-    pluralName: 'cupons';
-    displayName: 'cupon';
+    singularName: 'coupon';
+    pluralName: 'coupons';
+    displayName: 'coupon';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    name: Attribute.String;
+    offer: Attribute.Integer;
+    validity: Attribute.DateTime;
+    status: Attribute.Enumeration<['Active', 'Deactive']>;
     code: Attribute.String;
-    discount: Attribute.Integer;
-    status: Attribute.Boolean;
+    info: Attribute.String;
+    img: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::cupon.cupon',
+      'api::coupon.coupon',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::cupon.cupon',
+      'api::coupon.coupon',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFreeShippingFreeShipping extends Schema.SingleType {
+  collectionName: 'free_shippings';
+  info: {
+    singularName: 'free-shipping';
+    pluralName: 'free-shippings';
+    displayName: 'free shipping';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    amount: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::free-shipping.free-shipping',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::free-shipping.free-shipping',
       'oneToOne',
       'admin::user'
     > &
@@ -1078,6 +1112,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
       'api::subcategory.subcategory'
     >;
     stock: Attribute.Enumeration<['in stock', 'out of stock']>;
+    stocks: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1160,7 +1195,8 @@ declare module '@strapi/types' {
       'plugin::ezforms.recipient': PluginEzformsRecipient;
       'api::banner.banner': ApiBannerBanner;
       'api::category.category': ApiCategoryCategory;
-      'api::cupon.cupon': ApiCuponCupon;
+      'api::coupon.coupon': ApiCouponCoupon;
+      'api::free-shipping.free-shipping': ApiFreeShippingFreeShipping;
       'api::menu.menu': ApiMenuMenu;
       'api::product.product': ApiProductProduct;
       'api::subcategory.subcategory': ApiSubcategorySubcategory;
